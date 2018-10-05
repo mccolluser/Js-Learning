@@ -17,8 +17,8 @@ let secondQuestion = prompt("Во сколько обойдется", "");
 let firstQuestion1 = prompt("Введите обязательную статью расходов в этом месяце", "");
 let secondQuestion1 = prompt("Во сколько обойдется", "");
 
-appData["expenses"]["firstQuestion"] = secondQuestion;
-appData["expenses"]["firstQuestion1"] = secondQuestion1;
+appData["expenses"][firstQuestion] = secondQuestion;
+appData["expenses"][firstQuestion1] = secondQuestion1;
 
 let budgetForOneDay = Math.trunc(appData.budget / 30);
 alert("Бюджет на один день: " + budgetForOneDay);
