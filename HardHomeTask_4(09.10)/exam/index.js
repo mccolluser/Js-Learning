@@ -1,5 +1,3 @@
-'use strict'
-
 function findIndex(array, value) {
     for (var i = 0; i < array.length; i++) {
       if (array[i] == value) return i;
@@ -66,4 +64,8 @@ function getFriendlyNumbers(start, end){
     }
     return result;
 }
-console.log(getFriendlyNumbers(1,1500));
+module.exports = {
+    firstName: 'Никита',
+    secondName: 'Якимович',
+    task: getFriendlyNumbers
+}
