@@ -1,0 +1,22 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+button {
+    text-align: center;
+    outline: none;
+    width: 150px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: bisque;
+
+}
+.circle{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
