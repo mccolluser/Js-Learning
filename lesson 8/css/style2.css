@@ -1,0 +1,16 @@
+html {
+    height: 100%; 
+}
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px; 
+}
+.watch {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    font-size: 72px;
+    top:50%;
+    display: block;
+  }
