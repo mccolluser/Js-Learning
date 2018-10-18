@@ -81,11 +81,13 @@ window.addEventListener("DOMContentLoaded", function () {
     anchors.forEach(function(item) {
         item.addEventListener('click', function(event) {
             event.preventDefault();
-            let coordContextY = document.querySelector(item.hash).getBoundingClientRect().top;
+            let coordContextY = document.querySelector(item.hash).offsetTop;
 
             let scrolling = setInterval(function () {
-                let scrollingBy = coordContextY / 100;
-                if (scrollingBy > window.pageYOffset - coordContextY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+                let currentHeight = document.documentElement.scrollTop;
+                let scrollingBy =  40;
+                
+                if (document.documentElement.scrollTop < coordContextY) {
                     // то скроллим на к-во пикселей, которое соответствует одному такту
                     window.scrollBy(0, scrollingBy);
                 } else {
@@ -93,7 +95,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     window.scrollTo(0, coordContextY);
                     clearInterval(scrolling);
                 }
-            },20);
+            },10);
             
             
         });
