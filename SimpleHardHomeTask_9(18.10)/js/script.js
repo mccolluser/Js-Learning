@@ -13,6 +13,11 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    class React{
+        
+    }
+
+
     function showContentTab(index) {
         infoTabContents[index].classList.remove("hide");
         infoTabContents[index].classList.add("show");
