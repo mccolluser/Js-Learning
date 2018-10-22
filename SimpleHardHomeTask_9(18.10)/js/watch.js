@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
     'use strict';
-
-
+    
     setTimeout(function timer() {
         let now = new Date();
         let values = [now.getHours(), now.getMinutes(), now.getSeconds()];

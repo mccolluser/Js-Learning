@@ -13,10 +13,6 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    class React{
-        
-    }
-
 
     function showContentTab(index) {
         infoTabContents[index].classList.remove("hide");
@@ -25,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     hideContentTabs(1);
 
-    infoHeader.addEventListener('click', function (event) {
+    infoHeader.addEventListener('click', event => {
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')) {
             console.log(infoTabContents);
@@ -76,20 +72,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
     }
     setClock('timer', deadline);
-    // const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
-    //     animationTime = 500,
-    //     framesCount = 100;
-
 
     let anchors = document.querySelectorAll('a[href*="#"]');
 
-    anchors.forEach(function (item) {
-        item.addEventListener('click', function (event) {
+    anchors.forEach(item =>{
+        item.addEventListener('click', event => {
             event.preventDefault();
             let coordContextY = document.querySelector(item.hash).offsetTop;
 
-            let scrolling = setInterval(function () {
-                let currentHeight = document.documentElement.scrollTop;
+            let scrolling = setInterval( () => {
                 let scrollingBy = 40;
 
                 if (document.documentElement.scrollTop < coordContextY) {
@@ -115,7 +106,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     // Определение браузера пользователя
-    var isMobile = {
+    let isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
         },
@@ -137,8 +128,8 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     function detectBrowser() {
-        var winNav = window.navigator;
-        var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+        let winNav = window.navigator;
+        let isIEedge = winNav.userAgent.indexOf("Edge") > -1;
         if (isIEedge) {
             return 'css';
         }
@@ -151,20 +142,20 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // Выбор анимации
     if (answer == "css") {
-        more.addEventListener('click', function (event) {
+        more.addEventListener('click', () => {
             overlay.style.display = 'block';
             overlay.classList.add('blur-anim');
             document.body.style.overflow = 'hidden';
         });
     } else if (answer == "js") {
         // Анимация на JS
-        more.addEventListener('click', function (event) {
+        more.addEventListener('click',  () => {
             overlay.style.left = 0;
             document.body.style.overflow = 'hidden';
             overlay.style.display = 'block';
             let speed = 0;
             popup.style.left = 0 + "px";
-            let timer = setInterval(function () {
+            let timer = setInterval( () => {
                 speed += 20;
                 popup.style.left = speed + "px";
                 if (popup.offsetLeft == 700) {
@@ -173,24 +164,16 @@ window.addEventListener("DOMContentLoaded", function () {
             }, 20);
         });
     } else {
-        more.addEventListener('click', function (event) {
+        more.addEventListener('click', () => {
             overlay.classList.remove('fade');
             overlay.style.display = 'block';
             document.body.style.overflow = 'hidden';
         });
     }
 
-    close.addEventListener('click', function () {
+    close.addEventListener('click', () => {
         overlay.style.display = 'none';
         more.classList.remove('more-splash');
         document.body.style.overflow = '';
     });
-    // let descriptionBtn = document.querySelectorAll('.description-btn');
-    // descriptionBtn.forEach(function(item){
-    //     item.addEventListener('click', function(){
-    //         overlay.style.display = 'block';
-    //         this.classList.add('more-splash');
-    //         document.body.style.overflow = 'hidden';
-    //     });
-    // });
 });
